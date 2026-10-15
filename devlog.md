@@ -25,3 +25,19 @@ I also used isalpha() to check letters, but found that the cipher only wants reg
 After encountering all of these problems, I tested it with the HELLO example and was able to encrypt it to OIWWC and decrypt it back to HELLO.
 
 The next step is to determine how to use the driver to run the pipe between the encryption and logger files without losing information.
+
+## 10/15/2026 11:13 am
+
+Now I have to complete the driver part of the project and connect pipes, logger, and encryption all together here. I need to use the subprocess library/module like the description stated to work with processes in python. With the subprocesses, I think I have to create separate child processes to read output from encryption to handle properly.
+
+Since I'm in the driver which is mainly for user to use, I can't just have commands that make sense to me. I think I will have to create commands like password, encrypt, decrypt, etc and make it clear so user knows what they are selecting. I also need to find a way to log or have history for commands so I might have to keep track with numbers and show to user to display/select. I believe for input validation it should be the same as encryption and logger like how I have to split for commands and message info.
+
+## 10/15/2026 4:46 pm
+
+Creating the driver program took way longer than expected because I kept messing up using processes. I then used three process where two were child process which were for the other functionality like encrypting and logging. Also, I was originally doing the encryption request and response separately and that made the code more complex without a valid reason. However, I realized that I can handle them in the same command loop instead of creating separate functions for it.
+
+To help me understand the code, I kept printing and did a bunch of error handling to let me know what parts are breaking within the code. One part I needed to understand was that the PASS command only returns RESULT without any message. To make that clearer, I made it so that the driver displays and logs RESULT Password set after the encryption program confirms that it was successful.
+
+Another problem I initially faced was how to connect programs especially for logger to get the inputs from pipe. After looking at the code, I realized that I'm already using sys.stdin in other parts so I can just use that as well for the logger. While talking about logging, when dealing with QUIT, I made sure I let the child processes finish before we force kill the processes 
+
+I tried the test provided again in the decription with HELLo and OIWWC and got the result that I was expecting without anything breaking. 
