@@ -41,3 +41,9 @@ To help me understand the code, I kept printing and did a bunch of error handlin
 Another problem I initially faced was how to connect programs especially for logger to get the inputs from pipe. After looking at the code, I realized that I'm already using sys.stdin in other parts so I can just use that as well for the logger. While talking about logging, when dealing with QUIT, I made sure I let the child processes finish before we force kill the processes 
 
 I tried the test provided again in the decription with HELLo and OIWWC and got the result that I was expecting without anything breaking. 
+
+## 10/18/2026 4:32 pm
+I plan to create a readme file so that people that aren't familiar with the project will be able to understand the overview of what I was trying to acheive. In the readme, I want to just give a very brief outline of what each file does so in case anyone wants to modify something, it's easier to find the responsible file.
+
+## 10/18/2026 4:57 pm
+I was able to create the readme file. I had no problems as all I was doing was just very briefly summarizing what I had done in this project and letting whoever reads it know the overview of this project.
